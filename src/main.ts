@@ -23,7 +23,7 @@ export const main = defineCommand({
     },
     auth: {
       type: 'string',
-      description: 'Use a custom authorization token for accessing private repositories.',
+      description: 'Use a custom authorization token for accessing private repositories. (Alternatively, set the `OCTOGET_AUTH` environment variable.)',
     }
   },
   run({ args }) {

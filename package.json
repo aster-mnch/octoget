@@ -2,6 +2,18 @@
   "name": "octoget",
   "private": true,
   "description": "Download git repositories using GItHub GraphQL API.",
+  "exports": {
+    ".": {
+      "import": {
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
   "bin": {
     "octoget": "./bin/octoget.mjs"
   },

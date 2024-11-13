@@ -1,5 +1,6 @@
 import { defineCommand, runMain as runMainOrig } from 'citty'
 import pkgInfo from '../package.json' assert { type: 'json' }
+import { download } from './octoget';
 
 const main = defineCommand({
   meta: {
@@ -26,8 +27,12 @@ const main = defineCommand({
       description: 'Use a custom authorization token for accessing private repositories. (Alternatively, set the `OCTOGET_AUTH` environment variable.)',
     }
   },
-  run({ args }) {
-    // TODO
+  async run({ args }) {
+    await download(args.path, {
+      dir: args.dir,
+      force: args.force,
+      auth: args.auth,
+    });
   },
 });
 

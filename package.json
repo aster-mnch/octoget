@@ -16,5 +16,6 @@
   "bugs": {
     "url": "https://github.com/aster-mnch/octoget/issues"
   },
-  "homepage": "https://github.com/aster-mnch/octoget#readme"
+  "homepage": "https://github.com/aster-mnch/octoget#readme",
+  "packageManager": "pnpm@9.13.0"
 }

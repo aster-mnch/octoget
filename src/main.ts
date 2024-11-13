@@ -1,7 +1,7 @@
-import { defineCommand, runMain } from 'citty'
+import { defineCommand, runMain as runMainOrig } from 'citty'
 import pkgInfo from '../package.json' assert { type: 'json' }
 
-export const main = defineCommand({
+const main = defineCommand({
   meta: {
     name: pkgInfo.name,
     description: pkgInfo.description,
@@ -31,4 +31,4 @@ export const main = defineCommand({
   },
 });
 
-runMain(main);
+export const runMain = () => runMainOrig(main);

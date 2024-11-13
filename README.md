@@ -10,13 +10,13 @@ npx octoget@latest <path> [<dir>] [...options]
 
 ### Arguments
 
-- **path**: Repository identifier, specified as either owner/repo (e.g., aster-mnch/octoget) or a full URI (e.g., https://github.com/aster-mnch/octoget).
+- **path**: Repository identifier, specified as either `owner/repo` (e.g., `aster-mnch/octoget`) or a full URI (e.g., https://github.com/aster-mnch/octoget).
 - **dir**: The target directory where the repository contents will be extracted.
 
 ### Options
 
 - `--force`: Download into an existing directory, overwriting its contents.
-- `--auth`: Use a custom authorization token for accessing private repositories. (Alternatively, set the OCTOGET_AUTH environment variable.)
+- `--auth`: Use a custom authorization token for accessing private repositories. (Alternatively, set the `OCTOGET_AUTH` environment variable.)
 
 ### Examples
 

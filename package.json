@@ -4,7 +4,7 @@
   "description": "Download git repositories using GItHub GraphQL API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "jiti src/main.ts"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,9 @@
   "homepage": "https://github.com/aster-mnch/octoget#readme",
   "dependencies": {
     "citty": "^0.1.6"
+  },
+  "devDependencies": {
+    "jiti": "^2.4.0"
   },
   "packageManager": "pnpm@9.13.0"
 }

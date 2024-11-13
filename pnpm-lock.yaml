@@ -11,6 +11,10 @@ importers:
       citty:
         specifier: ^0.1.6
         version: 0.1.6
+    devDependencies:
+      jiti:
+        specifier: ^2.4.0
+        version: 2.4.0
 
 packages:
 
@@ -21,6 +25,10 @@ packages:
     resolution: {integrity: sha512-I5qxpzLv+sJhTVEoLYNcTW+bThDCPsit0vLNKShZx6rLtpilNpmmeTPaeqJb9ZE9dV3DGaeby6Vuhrw38WjeyQ==}
     engines: {node: ^14.18.0 || >=16.10.0}
 
+  jiti@2.4.0:
+    resolution: {integrity: sha512-H5UpaUI+aHOqZXlYOaFP/8AzKsg+guWu+Pr3Y8i7+Y3zr1aXAvCvTAQ1RxSc6oVD8R8c7brgNtTVP91E7upH/g==}
+    hasBin: true
+
 snapshots:
 
   citty@0.1.6:
@@ -28,3 +36,5 @@ snapshots:
       consola: 3.2.3
 
   consola@3.2.3: {}
+
+  jiti@2.4.0: {}

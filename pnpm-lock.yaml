@@ -15,6 +15,9 @@ importers:
       jiti:
         specifier: ^2.4.0
         version: 2.4.0
+      typescript:
+        specifier: ^5.6.3
+        version: 5.6.3
 
 packages:
 
@@ -29,6 +32,11 @@ packages:
     resolution: {integrity: sha512-H5UpaUI+aHOqZXlYOaFP/8AzKsg+guWu+Pr3Y8i7+Y3zr1aXAvCvTAQ1RxSc6oVD8R8c7brgNtTVP91E7upH/g==}
     hasBin: true
 
+  typescript@5.6.3:
+    resolution: {integrity: sha512-hjcS1mhfuyi4WW8IWtjP7brDrG2cuDZukyrYrSauoXGNgx0S7zceP07adYkJycEr56BOUTNPzbInooiN3fn1qw==}
+    engines: {node: '>=14.17'}
+    hasBin: true
+
 snapshots:
 
   citty@0.1.6:
@@ -38,3 +46,5 @@ snapshots:
   consola@3.2.3: {}
 
   jiti@2.4.0: {}
+
+  typescript@5.6.3: {}

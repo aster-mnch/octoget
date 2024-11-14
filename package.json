@@ -25,7 +25,7 @@
     "dist"
   ],
   "scripts": {
-    "dev": "jiti src/main.ts",
+    "dev": "jiti src/dev.ts",
     "build": "unbuild"
   },
   "repository": {

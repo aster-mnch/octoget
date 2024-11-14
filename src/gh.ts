@@ -22,7 +22,7 @@ export async function getEntries(
   client: Client,
   source: string,
   options: {
-    appDir: string,
+    appDir: string;
   },
 ): Promise<{
   entries: TreeEntry[];

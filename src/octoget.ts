@@ -47,8 +47,8 @@ async function fetchAndSaveEntries(
   source: string,
   appDir: string,
   options?: {
-    force?: boolean,
-    relativePath?: string,
+    force?: boolean;
+    relativePath?: string;
   },
 ): Promise<string[]> {
   const nextDirs = [];

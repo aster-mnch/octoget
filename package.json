@@ -20,7 +20,10 @@
   "bin": {
     "octoget": "./bin/octoget.mjs"
   },
-  "files": ["bin", "dist"],
+  "files": [
+    "bin",
+    "dist"
+  ],
   "scripts": {
     "dev": "jiti src/dev.ts",
     "build": "unbuild",

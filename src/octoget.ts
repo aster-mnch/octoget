@@ -7,7 +7,7 @@ export async function download(
   path: string,
   options?: DownloadOption,
 ): Promise<DownloadResult> {
-  const source = parseGitHubURI(path);
+  const { owner, repo } = parseGitHubURI(path);
   const dir = resolveDir(options?.dir);
 
   const client = new Client(options?.auth);
@@ -16,15 +16,19 @@ export async function download(
   const appDirs = [''];
   // biome-ignore lint/suspicious/noAssignInExpressions: intended side effect
   while ((appDir = appDirs.pop()) != null) {
-    const nextDirs = await fetchAndSaveEntries(client, source, appDir, {
-      force: options?.force,
-      relativePath: dir,
-    });
+    const nextDirs = await fetchAndSaveEntries(
+      client,
+      { owner, repo, appDir },
+      {
+        force: options?.force,
+        relativePath: dir,
+      },
+    );
     appDirs.push(...nextDirs);
   }
 
   return {
-    source,
+    source: `${owner}/${repo}`,
     dir,
   };
 }
@@ -36,8 +40,11 @@ function resolveDir(dir: string | undefined): string {
 
 async function fetchAndSaveEntries(
   client: Client,
-  source: string,
-  appDir: string,
+  graphqlArgs: {
+    owner: string;
+    repo: string;
+    appDir: string;
+  },
   options?: {
     force?: boolean;
     relativePath?: string;
@@ -46,9 +53,9 @@ async function fetchAndSaveEntries(
   const nextDirs = [];
 
   // TODO check if the directory exists.
-  await mkdir(appDir, options);
+  await mkdir(graphqlArgs.appDir, options);
 
-  const { entries } = await getEntries(client, source, { appDir });
+  const { entries } = await getEntries(client, graphqlArgs);
   for (const entry of entries) {
     switch (entry.type) {
       case 'blob':

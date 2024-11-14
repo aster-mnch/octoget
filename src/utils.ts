@@ -1,9 +1,15 @@
-export function parseGitHubURI(path: string): string {
+export function parseGitHubURI(path: string): {
+  owner: string;
+  repo: string;
+} {
   const pattern =
-    /^(?<domain>https:\/\/github.com\/)?(?<repo>[\w.-]+\/[\w.-]+)(?<subdir>[^#]+)?(?<ref>#[\w.\/@-]+)?/;
+    /^(?<domain>https:\/\/github.com\/)?(?<owner>[\w.-]+)\/(?<repo>[\w.-]+)(?<subdir>[^#]+)?(?<ref>#[\w.\/@-]+)?/;
   const g = pattern.exec(path)?.groups;
-  if (g?.repo == null) {
+  if (g?.owner == null || g?.repo == null) {
     throw new Error('Invalid format');
   }
-  return g.repo;
+  return {
+    owner: g.owner,
+    repo: g.repo,
+  };
 }

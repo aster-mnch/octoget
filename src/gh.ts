@@ -24,8 +24,9 @@ export class Client {
 
 export async function getEntries(
   client: Client,
-  source: string,
-  options: {
+  graphqlArgs: {
+    owner: string;
+    repo: string;
     appDir: string;
   },
 ): Promise<{

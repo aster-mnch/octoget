@@ -1,3 +1,6 @@
+import fs from 'node:fs';
+import { resolve } from 'pathe';
+
 export async function mkdir(
   dir: string,
   options?: {
@@ -5,7 +8,8 @@ export async function mkdir(
     relativePath?: string;
   },
 ) {
-  // TODO
+  const path = resolve(options?.relativePath ?? '.', dir);
+  await fs.promises.mkdir(path, { recursive: true });
 }
 
 export async function writeFile(
@@ -16,5 +20,6 @@ export async function writeFile(
     relativePath?: string;
   },
 ) {
-  // TODO
+  const filepath = resolve(options?.relativePath ?? '.', path);
+  await fs.promises.writeFile(filepath, content);
 }

@@ -44,7 +44,8 @@
   "homepage": "https://github.com/aster-mnch/octoget#readme",
   "dependencies": {
     "@octokit/core": "^6.1.2",
-    "citty": "^0.1.6"
+    "citty": "^0.1.6",
+    "pathe": "^1.1.2"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

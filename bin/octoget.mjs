@@ -1,4 +1,4 @@
 #!/usr/bin/env node
 
-import { runMain } from '../dist/main.mjs';
+import { runMain } from '../dist/cli.mjs';
 runMain();

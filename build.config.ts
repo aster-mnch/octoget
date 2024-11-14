@@ -5,5 +5,5 @@ export default defineBuildConfig({
   rollup: {
     emitCJS: true,
   },
-  entries: ['src/index.ts', 'src/main.ts'],
+  entries: ['src/index.ts', 'src/cli.ts'],
 });

@@ -58,13 +58,13 @@ import { download } from 'octoget';
 import { download } = require('octoget');
 ```
 
-### `download(source, options?)`
+### `download(path, options?)`
 
 The function downloads a GitHub repository and saves it to a specified directory.
 
 #### Parameters:
 
-- **source**: (string) The repository to download, specified as `owner/repo` or a full URL.
+- **path**: (string) The repository to download, specified as `owner/repo` or a full URL.
 - **options**: (object) An optional object containing:
   - **dir**: (string) The directory to which the repository will be downloaded.
   - **force**: (boolean) If `true`, allows downloading into an existing directory.

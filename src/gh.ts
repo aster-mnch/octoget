@@ -1,4 +1,4 @@
-import { Octokit } from '@octokit/core';
+import { graphql } from '@octokit/graphql';
 
 // https://docs.github.com/graphql/reference/objects#treeentry
 type TreeEntry = {
@@ -11,14 +11,18 @@ type TreeEntry = {
 
 // TODO
 export class Client {
-  #octokit: Octokit;
+  #_graphql: typeof graphql;
 
   constructor(auth: string | undefined) {
-    this.#octokit = new Octokit({ auth });
+    this.#_graphql = graphql.defaults({
+      headers: {
+        authorization: `bearer ${auth}`,
+      },
+    });
   }
 
   get graphql() {
-    return this.#octokit.graphql;
+    return this.#_graphql;
   }
 }
 

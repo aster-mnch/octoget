@@ -1,7 +1,7 @@
 {
   "name": "octoget",
   "private": true,
-  "description": "Download git repositories using GItHub GraphQL API.",
+  "description": "🐙 Download git repositories using GItHub GraphQL API.",
   "exports": {
     ".": {
       "import": {

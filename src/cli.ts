@@ -5,6 +5,7 @@ import { download } from './octoget';
 const main = defineCommand({
   meta: {
     name: pkgInfo.name,
+    version: pkgInfo.version,
     description: pkgInfo.description,
   },
   args: {

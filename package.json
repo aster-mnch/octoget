@@ -26,7 +26,9 @@
   ],
   "scripts": {
     "dev": "jiti src/dev.ts",
-    "build": "unbuild"
+    "build": "unbuild",
+    "check": "biome check",
+    "check:write": "biome check --write"
   },
   "repository": {
     "type": "git",
@@ -43,6 +45,7 @@
     "citty": "^0.1.6"
   },
   "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
     "@types/node": "^22.9.0",
     "jiti": "^2.4.0",
     "typescript": "^5.6.3",

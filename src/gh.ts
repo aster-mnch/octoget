@@ -11,8 +11,6 @@ type TreeEntry = {
 export class Client {
   #auth: string;
 
-  constructor() {}
-
   setAuth(auth: string) {
     this.#auth = auth;
   }

@@ -43,6 +43,7 @@
   },
   "homepage": "https://github.com/aster-mnch/octoget#readme",
   "dependencies": {
+    "@octokit/core": "^6.1.2",
     "citty": "^0.1.6"
   },
   "devDependencies": {

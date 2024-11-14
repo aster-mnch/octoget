@@ -10,10 +10,7 @@ export async function download(
   const source = parseGitHubURI(path);
   const dir = resolveDir(options?.dir);
 
-  const client = new Client();
-  if (options?.auth != null) {
-    client.setAuth(options.auth);
-  }
+  const client = new Client(options?.auth);
 
   let appDir: string | undefined;
   const appDirs = [''];

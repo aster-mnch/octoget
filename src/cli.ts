@@ -28,10 +28,11 @@ const main = defineCommand({
     },
   },
   async run({ args }) {
-    await download(args.path, {
-      dir: args.dir,
-      force: args.force,
-      auth: args.auth,
+    const { path, dir, force, auth } = args;
+    await download(path, {
+      dir,
+      force,
+      auth,
     });
   },
 });

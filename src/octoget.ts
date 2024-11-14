@@ -1,12 +1,13 @@
 import { mkdir, writeFile } from './fs';
 import { Client, getEntries } from './gh';
 import type { DownloadOption, DownloadResult } from './types';
+import { parseGitHubURI } from './utils';
 
 export async function download(
   path: string,
   options?: DownloadOption,
 ): Promise<DownloadResult> {
-  const source = extractSource(path);
+  const source = parseGitHubURI(path);
   const dir = resolveDir(options?.dir);
 
   const client = new Client();
@@ -29,13 +30,6 @@ export async function download(
     source,
     dir,
   };
-}
-
-function extractSource(path: string): string {
-  // TODO extract repository source string from path
-  // `aster-mnch/octoget` -> `aster-mnch/octoget`
-  // `https://github.com/aster-mnch/octoget` -> `aster-mnch/octoget`
-  return path;
 }
 
 function resolveDir(dir: string | undefined): string {

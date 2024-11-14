@@ -5,7 +5,7 @@ type TreeEntry = {
   path: string;
   type: 'blob' | 'tree';
   object: {
-    content: string;
+    text: string;
   };
 };
 
@@ -32,8 +32,42 @@ export async function getEntries(
 ): Promise<{
   entries: TreeEntry[];
 }> {
-  // TODO request GitHub GraphQL API
+  const { appDir, ...restArgs } = graphqlArgs;
+  // TODO Allow specifying revision other than `HEAD`.
+  const expression = `HEAD:${appDir}`;
+
+  const response = await client.graphql<{
+    repository: {
+      object: {
+        entries: TreeEntry[];
+      };
+    };
+  }>(
+    `query TreeEntries($owner: String!, $repo: String!, $expression: String!) {
+      repository(owner: $owner, name: $repo) {
+        object(expression: $expression) {
+          ... on Tree {
+            entries {
+              path
+              type
+              object {
+                ... on Blob {
+                  text
+                  isBinary
+                }
+              }
+            }
+          }
+        }
+      }
+    }`,
+    {
+      ...restArgs,
+      expression,
+    },
+  );
+
   return {
-    entries: [],
+    entries: response.repository.object.entries,
   };
 }

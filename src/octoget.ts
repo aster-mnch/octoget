@@ -16,6 +16,7 @@ export async function download(
 
   let appDir: string | undefined;
   const appDirs = [''];
+  // biome-ignore lint/suspicious/noAssignInExpressions: intended side effect
   while ((appDir = appDirs.pop()) != null) {
     const nextDirs = await fetchAndSaveEntries(client, source, appDir, {
       force: options?.force,

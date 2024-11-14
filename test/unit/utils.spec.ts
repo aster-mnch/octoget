@@ -7,7 +7,9 @@ describe('parseGitHubURI', () => {
   });
 
   it('returns `org/repo` when given a full URI', () => {
-    expect(parseGitHubURI('https://github.com/aster-mnch/octoget')).toBe('aster-mnch/octoget');
+    expect(parseGitHubURI('https://github.com/aster-mnch/octoget')).toBe(
+      'aster-mnch/octoget',
+    );
   });
 
   it('throws "Invalid format" error when given invalid syntax', () => {

@@ -1,5 +1,7 @@
 # 🐙 octoget
 
+[![npm version](https://badge.fury.io/js/octoget.svg)](https://badge.fury.io/js/octoget)
+
 `octoget` is a CLI and code library for downloading GitHub repositories using the GitHub GraphQL API.
 
 ## Usage (CLI)

@@ -1,6 +1,6 @@
 import { defineCommand, runMain as runMainOrig } from 'citty';
 import { process } from 'std-env';
-import pkgInfo from '../package.json' assert { type: 'json' };
+import pkgInfo from '../package.json' with { type: 'json' };
 import { download } from './octoget';
 
 const main = defineCommand({

@@ -4,6 +4,12 @@
 
 `octoget` is a CLI and code library for downloading GitHub repositories using the GitHub GraphQL API.
 
+## Why `octoget`?
+
+In many cases, you should use `git` command or [unjs/giget](https://github.com/unjs/giget). However, `octoge` can be useful when these don't work well.
+
+For example, [WebContainers](https://webcontainers.io/) doesn't have `git` command and throws CORS error when using `giget`. (`giget` uses [GitHub archive API](https://docs.github.com/en/rest/repos/contents?apiVersion=2022-11-28#download-a-repository-archive-tar), and this redirects to `codeload.github.com` domain, which does not support Cross-Origin Resource Sharing.)
+
 ## Usage (CLI)
 
 ```sh

@@ -24,19 +24,16 @@ npx octoget@latest <path> [<dir>] [...options]
 ### Options
 
 - `--force`: Download into an existing directory, overwriting its contents.
-- `--auth`: Use a custom authorization token for accessing private repositories. (Alternatively, set the `OCTOGET_AUTH` environment variable.)
+- `--auth`: Use a custom authorization token for using GitHub GraphQL API. (Alternatively, set the `OCTOGET_AUTH` environment variable.)
 
 ### Examples
 
 ```sh
 # Download a public repository to the current directory
-npx octoget@latest aster-mnch/octoget
+OCTOGET_AUTH=ghu_XXXXX npx octoget@latest aster-mnch/octoget
 
 # Download a repository to a specified directory
-npx octoget@latest aster-mnch/octoget path/to/dir
-
-# Download a private repository with an authorization token
-npx octoget@latest aster-mnch/private-repository --auth=ghu_XXXXX
+OCTOGET_AUTH=ghu_XXXXX npx octoget@latest aster-mnch/octoget path/to/dir
 ```
 
 ## Usage (Code)
@@ -76,7 +73,7 @@ The function downloads a GitHub repository and saves it to a specified directory
 - **options**: (object) An optional object containing:
   - **dir**: (string) The directory to which the repository will be downloaded.
   - **force**: (boolean) If `true`, allows downloading into an existing directory.
-  - **auth**: (string) Authorization token for accessing private repositories.
+  - **auth**: (string) Authorization token for using GitHub GraphQL API.
 
 #### Example Usage:
 

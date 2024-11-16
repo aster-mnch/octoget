@@ -45,7 +45,8 @@
   "dependencies": {
     "@octokit/graphql": "^8.1.1",
     "citty": "^0.1.6",
-    "pathe": "^1.1.2"
+    "pathe": "^1.1.2",
+    "std-env": "^3.8.0"
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",

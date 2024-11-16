@@ -1,6 +1,19 @@
 # Changelog
 
 
+## v0.0.3
+
+[compare changes](https://github.com/aster-mnch/octoget/compare/v0.0.2...v0.0.3)
+
+### 💅 Refactors
+
+- **cli:** Migrate import assertions to import attributes ([7a9ee35](https://github.com/aster-mnch/octoget/commit/7a9ee35))
+- **cli:** Use destructuring assignment ([90cdd21](https://github.com/aster-mnch/octoget/commit/90cdd21))
+
+### ❤️ Contributors
+
+- Aster-mnch <mnch.mai@gmail.com>
+
 ## v0.0.2
 
 [compare changes](https://github.com/aster-mnch/octoget/compare/v0.0.1...v0.0.2)

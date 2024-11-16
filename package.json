@@ -1,6 +1,6 @@
 {
   "name": "octoget",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "🐙 Download git repositories using GItHub GraphQL API.",
   "exports": {
     ".": {

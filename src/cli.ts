@@ -1,13 +1,15 @@
 import { defineCommand, runMain as runMainOrig } from 'citty';
 import { process } from 'std-env';
-import pkgInfo from '../package.json' with { type: 'json' };
+import { description, name, version } from '../package.json' with {
+  type: 'json',
+};
 import { download } from './octoget';
 
 const main = defineCommand({
   meta: {
-    name: pkgInfo.name,
-    version: pkgInfo.version,
-    description: pkgInfo.description,
+    name,
+    version,
+    description,
   },
   args: {
     path: {

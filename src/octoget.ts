@@ -5,7 +5,7 @@ import { parseGitHubURI } from './utils';
 
 export async function download(
   path: string,
-  options?: DownloadOption,
+  options: DownloadOption,
 ): Promise<DownloadResult> {
   const { owner, repo } = parseGitHubURI(path);
   const dir = resolveDir(options?.dir);

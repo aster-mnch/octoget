@@ -3,8 +3,8 @@ export type DownloadOption = {
   dir?: string;
   /** If `true`, allows downloading into an existing directory. */
   force?: boolean;
-  /** Authorization token for accessing private repositories. */
-  auth?: string;
+  /** Authorization token for using GitHub GraphQL API. */
+  auth: string;
 };
 
 export type DownloadResult = {

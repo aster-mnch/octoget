@@ -1,5 +1,5 @@
 import { mkdir, writeFile } from './fs';
-import { Client, getEntries } from './gh';
+import { Client, getEntries } from './github';
 import type { DownloadOption, DownloadResult } from './types';
 import { parseGitHubURI } from './utils';
 

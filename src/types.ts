@@ -4,7 +4,7 @@ export type DownloadOption = {
   /** If `true`, allows downloading into an existing directory. */
   force?: boolean;
   /** Authorization token for accessing private repositories. */
-  auth?: string;
+  auth: string;
 };
 
 export type DownloadResult = {

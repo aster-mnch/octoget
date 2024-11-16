@@ -37,6 +37,9 @@ const main = defineCommand({
     const { path, dir, force } = args;
 
     const auth = args.auth ?? process.env.OCTOGET_AUTH;
+    if (!auth) {
+      throw new Error('--auth options or `OCTOGET_AUTH` environment variable is required.');
+    }
 
     await download(path, {
       dir,

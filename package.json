@@ -28,6 +28,8 @@
     "dev": "jiti src/dev.ts",
     "build": "unbuild",
     "test": "vitest",
+    "prepack": "pnpm run build --minify",
+    "release": "pnpm run test && changelogen --release && npm publish && git push --follow-tags",
     "check": "biome check",
     "check:write": "biome check --write"
   },
@@ -51,6 +53,7 @@
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
     "@types/node": "^22.9.0",
+    "changelogen": "^0.5.7",
     "jiti": "^2.4.0",
     "typescript": "^5.6.3",
     "unbuild": "^2.0.0",

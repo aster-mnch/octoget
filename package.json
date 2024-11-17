@@ -29,8 +29,8 @@
     "build": "unbuild",
     "test": "vitest",
     "prepack": "pnpm run build --minify",
-    "prerelease": "pnpm run check",
-    "release": "pnpm run test && changelogen --release && npm publish && git push --follow-tags",
+    "prerelease": "pnpm run check && pnpm run test",
+    "release": "changelogen --release && npm publish && git push --follow-tags",
     "check": "biome check",
     "check:write": "biome check --write"
   },

@@ -5,7 +5,10 @@ type TreeEntry = {
   path: string;
   type: 'blob' | 'tree';
   object: {
-    text: string;
+    /** UTF8 text data or null if the Blob is binary. */
+    text: string | null;
+    /** Indicates whether the Blob is binary or text. Returns null if unable to determine the encoding. */
+    isBinary: boolean;
   };
 };
 

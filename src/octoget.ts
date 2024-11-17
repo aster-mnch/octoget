@@ -59,8 +59,10 @@ async function fetchAndSaveEntries(
   for (const entry of entries) {
     switch (entry.type) {
       case 'blob':
-        // TODO check if the file exists.
-        await writeFile(entry.path, entry.object.text, options);
+        // TODO handling binary files
+        if (entry.object.text != null) {
+          await writeFile(entry.path, entry.object.text, options);
+        }
         break;
       case 'tree':
         nextDirs.push(entry.path);

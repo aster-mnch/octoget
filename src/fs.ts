@@ -1,3 +1,4 @@
+import { Buffer } from 'node:buffer';
 import fs from 'node:fs';
 import { resolve } from 'pathe';
 
@@ -21,5 +22,6 @@ export async function writeFile(
   },
 ) {
   const filepath = resolve(options?.relativePath ?? '.', path);
-  await fs.promises.writeFile(filepath, content);
+  const data = new Uint8Array(Buffer.from(content));
+  await fs.promises.writeFile(filepath, data);
 }

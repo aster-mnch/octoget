@@ -1,6 +1,18 @@
 # Changelog
 
 
+## v0.0.4
+
+[compare changes](https://github.com/aster-mnch/octoget/compare/v0.0.3...v0.0.4)
+
+### 🩹 Fixes
+
+- Add a case where file content is a binary ([#2](https://github.com/aster-mnch/octoget/pull/2))
+
+### ❤️ Contributors
+
+- Aster-mnch <mnch.mai@gmail.com>
+
 ## v0.0.3
 
 [compare changes](https://github.com/aster-mnch/octoget/compare/v0.0.2...v0.0.3)

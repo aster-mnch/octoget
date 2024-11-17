@@ -1,6 +1,6 @@
 {
   "name": "octoget",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "🐙 Download git repositories using GItHub GraphQL API.",
   "exports": {
     ".": {
@@ -29,6 +29,7 @@
     "build": "unbuild",
     "test": "vitest",
     "prepack": "pnpm run build --minify",
+    "prerelease": "pnpm run check",
     "release": "pnpm run test && changelogen --release && npm publish && git push --follow-tags",
     "check": "biome check",
     "check:write": "biome check --write"
